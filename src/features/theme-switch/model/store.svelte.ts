@@ -5,7 +5,7 @@ let currentTheme = $state((cookies.get('theme') as TTheme) ?? 'system');
 
 export const changeTheme = (theme: 'light' | 'system' | 'dark') => {
 	document.documentElement.classList.remove(currentTheme);
-	document.documentElement.classList.add(theme);
+	if (theme !== 'system') document.documentElement.classList.add(theme);
 	cookies.set('theme', theme, {
 		path: '/',
 		secure: true,
