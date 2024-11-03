@@ -3,14 +3,14 @@ import type { Config } from 'tailwindcss';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-
 	theme: {
 		extend: {
 			colors: {
 				surface: 'var(--bg-surface)',
 				base: 'var(--bg-base)',
 				outline: 'var(--outline)',
-				accent: 'var(--accent)'
+				accent: 'var(--accent)',
+				depth: 'var(--depth)'
 			},
 			fontFamily: {
 				ubuntu: ['Ubuntu', 'sans-serif'],

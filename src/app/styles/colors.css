@@ -17,16 +17,21 @@
 		--text-light: #000000;
 		--text-dark: #ffffff;
 
+		--depth-light: rgba(0, 0, 0, 0.06);
+		--depth-dark: rgba(60, 60, 60, 0.3);
+
 		--bg-surface: var(--bg-surface-light);
 		--bg-base: var(--bg-base-light);
 		--outline: var(--outline-light);
 		--text: var(--text-light);
+		--depth: var(--depth-light);
 
 		@media (prefers-color-scheme: dark) {
 			--bg-surface: var(--bg-surface-dark);
 			--bg-base: var(--bg-base-dark);
 			--outline: var(--outline-dark);
 			--text: var(--text-dark);
+			--depth: var(--depth-dark);
 		}
 
 		&.light {
@@ -34,6 +39,7 @@
 			--bg-base: var(--bg-base-light);
 			--outline: var(--outline-light);
 			--text: var(--text-light);
+			--depth: var(--depth-light);
 		}
 
 		&.dark {
@@ -41,6 +47,7 @@
 			--bg-base: var(--bg-base-dark);
 			--outline: var(--outline-dark);
 			--text: var(--text-dark);
+			--depth: var(--depth-dark);
 		}
 	}
 }

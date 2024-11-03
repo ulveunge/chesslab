@@ -39,7 +39,7 @@
 
 <button
 	class={clsx(
-		'relative h-8 w-24 overflow-hidden rounded-lg border border-outline bg-base font-thin hover:border-accent',
+		'shadow-depth relative h-8 w-24 overflow-hidden rounded-lg border border-outline bg-base text-sm font-thin shadow-inner hover:border-accent',
 		className
 	)}
 	onclick={switchTheme}
