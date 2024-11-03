@@ -77,6 +77,7 @@
 			'w-[var(--max-width)]': open
 		}
 	)}
+	style="--min-width: 68px"
 >
 	<div bind:this={container} class="flex min-w-max origin-left flex-col p-6">
 		<div>
