@@ -1,0 +1,187 @@
+@import 'tailwindcss/base';
+
+@layer base {
+	/* Roboto Condensed */
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Black.ttf') format('truetype');
+		font-weight: 900;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-BlackItalic.ttf') format('truetype');
+		font-weight: 900;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Bold.ttf') format('truetype');
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-BoldItalic.ttf') format('truetype');
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-ExtraBold.ttf') format('truetype');
+		font-weight: 800;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-ExtraBoldItalic.ttf') format('truetype');
+		font-weight: 800;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-ExtraLight.ttf') format('truetype');
+		font-weight: 200;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-ExtraLightItalic.ttf') format('truetype');
+		font-weight: 200;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Italic.ttf') format('truetype');
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Light.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-LightItalic.ttf') format('truetype');
+		font-weight: 300;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Medium.ttf') format('truetype');
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-MediumItalic.ttf') format('truetype');
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-SemiBold.ttf') format('truetype');
+		font-weight: 600;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-SemiBoldItalic.ttf') format('truetype');
+		font-weight: 600;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-Thin.ttf') format('truetype');
+		font-weight: 100;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/roboto-condensed/RobotoCondensed-ThinItalic.ttf') format('truetype');
+		font-weight: 100;
+		font-style: italic;
+	}
+
+	/* Ubuntu */
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-Bold.ttf') format('truetype');
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-BoldItalic.ttf') format('truetype');
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-Italic.ttf') format('truetype');
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-Light.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-LightItalic.ttf') format('truetype');
+		font-weight: 300;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-Medium.ttf') format('truetype');
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-MediumItalic.ttf') format('truetype');
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Ubuntu';
+		src: url('/fonts/ubuntu/Ubuntu-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+	}
+}

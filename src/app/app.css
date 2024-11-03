@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './styles/fonts.css';
+@import './styles/colors.css';
+
+@layer base {
+	body {
+		@apply min-w-[375px] bg-surface font-ubuntu text-[var(--text)];
+	}
+
+	a {
+		@apply hover:text-accent;
+	}
+}

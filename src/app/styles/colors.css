@@ -1,0 +1,46 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+
+@layer base {
+	:root {
+		--accent: #ec4e20;
+
+		--bg-surface-light: #fbfbfb;
+		--bg-surface-dark: #0f0f0f;
+
+		--bg-base-light: #ffffff;
+		--bg-base-dark: #090909;
+
+		--outline-light: #e5e5e5;
+		--outline-dark: #222222;
+
+		--text-light: #000000;
+		--text-dark: #ffffff;
+
+		--bg-surface: var(--bg-surface-light);
+		--bg-base: var(--bg-base-light);
+		--outline: var(--outline-light);
+		--text: var(--text-light);
+
+		@media (prefers-color-scheme: dark) {
+			--bg-surface: var(--bg-surface-dark);
+			--bg-base: var(--bg-base-dark);
+			--outline: var(--outline-dark);
+			--text: var(--text-dark);
+		}
+
+		&.light {
+			--bg-surface: var(--bg-surface-light);
+			--bg-base: var(--bg-base-light);
+			--outline: var(--outline-light);
+			--text: var(--text-light);
+		}
+
+		&.dark {
+			--bg-surface: var(--bg-surface-dark);
+			--bg-base: var(--bg-base-dark);
+			--outline: var(--outline-dark);
+			--text: var(--text-dark);
+		}
+	}
+}
