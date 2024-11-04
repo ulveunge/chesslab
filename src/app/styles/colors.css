@@ -4,6 +4,7 @@
 @layer base {
 	:root {
 		--accent: #ec4e20;
+		--accent-dark: #d6451c;
 
 		--bg-surface-light: #fbfbfb;
 		--bg-surface-dark: #0f0f0f;

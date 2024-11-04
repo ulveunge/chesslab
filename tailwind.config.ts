@@ -10,6 +10,7 @@ export default {
 				base: 'var(--bg-base)',
 				outline: 'var(--outline)',
 				accent: 'var(--accent)',
+				'accent-dark': 'var(--accent-dark)',
 				depth: 'var(--depth)'
 			},
 			fontFamily: {
