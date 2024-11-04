@@ -54,16 +54,19 @@
 		</span>
 	{/snippet}
 
+	{@const tag = href ? 'a' : 'button'}
+
 	<li>
-		{#if href}
-			<a class={commonContainerClasses} {href}>
-				{@render itemContent()}
-			</a>
-		{:else}
-			<button class={commonContainerClasses} {onclick}>
-				{@render itemContent()}
-			</button>
-		{/if}
+		<svelte:element
+			this={tag}
+			role="menuitem"
+			tabindex="0"
+			class={commonContainerClasses}
+			{href}
+			{onclick}
+		>
+			{@render itemContent()}
+		</svelte:element>
 	</li>
 {/snippet}
 
@@ -98,7 +101,7 @@
 			{/each}
 		</div>
 		<ul class="flex flex-col gap-3">
-			{@render menuItem({ text: 'Log In', iconId: 'fa6-right-to-bracket' })}
+			{@render menuItem({ text: 'Log In', iconId: 'fa6-right-to-bracket', onclick: toggleHandler })}
 			{@render menuItem({ text: 'Sign Up', iconId: 'fa6-user-plus' })}
 		</ul>
 	</div>
