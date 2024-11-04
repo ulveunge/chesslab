@@ -55,16 +55,10 @@
 	{/snippet}
 
 	{@const tag = href ? 'a' : 'button'}
+	{@const role = href ? 'link' : 'button'}
 
 	<li>
-		<svelte:element
-			this={tag}
-			role="menuitem"
-			tabindex="0"
-			class={commonContainerClasses}
-			{href}
-			{onclick}
-		>
+		<svelte:element this={tag} {role} tabindex="0" class={commonContainerClasses} {href} {onclick}>
 			{@render itemContent()}
 		</svelte:element>
 	</li>
