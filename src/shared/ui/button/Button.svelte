@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import clsx from 'clsx';
 
 	interface Props {
-		children: Snippet;
+		children: Children;
 		size?: 's' | 'm' | 'l';
 		href?: string;
 		class?: string;
