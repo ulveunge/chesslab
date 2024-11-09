@@ -109,6 +109,6 @@
 		</ul>
 	</div>
 </nav>
-<Modal open={authModal.isOpen} onclose={authModal.close}>
+<Modal class="basis-96" open={authModal.isOpen} onclose={authModal.close}>
 	<AuthForm onsuccess={authModal.close} />
 </Modal>

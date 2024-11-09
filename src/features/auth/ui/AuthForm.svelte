@@ -16,6 +16,17 @@
 	const togglePasswordVisibility = () => {
 		passwordInputType = passwordVisible ? 'text' : 'password';
 	};
+
+	const loginHandler = async (e: SubmitEvent) => {
+		e.preventDefault();
+
+		try {
+			await pb.collection('users').authWithPassword(username, password);
+			if (onsuccess) onsuccess();
+		} catch (error) {
+			console.log(error);
+		}
+	};
 </script>
 
 {#snippet passwordVisibilityButton()}
@@ -30,19 +41,7 @@
 	</button>
 {/snippet}
 
-<form
-	onsubmit={async (e: SubmitEvent) => {
-		e.preventDefault();
-
-		try {
-			await pb.collection('users').authWithPassword(username, password);
-			if (onsuccess) onsuccess();
-		} catch (error) {
-			console.log(error);
-		}
-	}}
-	class="flex w-96 flex-col space-y-8"
->
+<form onsubmit={loginHandler} class="flex w-full flex-col space-y-8">
 	<div class=" space-y-6">
 		<Input
 			label="Username"
