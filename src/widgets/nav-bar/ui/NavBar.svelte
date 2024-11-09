@@ -1,7 +1,10 @@
 <script lang="ts">
 	import clsx from 'clsx';
-	import { Icon } from '$/shared/ui';
-	import { NAVIGATION_LINKS, outsideClick } from '$/shared/lib';
+	import { Icon, Modal } from '$shared/ui';
+	import { outsideClick } from '$shared/lib/actions';
+	import { useModal } from '$shared/lib/hooks';
+	import { NAVIGATION_LINKS } from '$shared/lib/constants';
+	import { AuthForm } from '$features/auth';
 	import { ICON_SIZE } from '../lib/constants';
 
 	let open = $state(false);
@@ -18,6 +21,8 @@
 	};
 
 	const toggleHandler = $derived(open ? closeHandler : openHandler);
+
+	const authModal = useModal();
 
 	$effect(() => {
 		const width = container.clientWidth;
@@ -95,8 +100,15 @@
 			{/each}
 		</div>
 		<ul class="flex flex-col gap-3">
-			{@render menuItem({ text: 'Log In', iconId: 'fa6-right-to-bracket', onclick: toggleHandler })}
+			{@render menuItem({
+				text: 'Log In',
+				iconId: 'fa6-right-to-bracket',
+				onclick: authModal.open
+			})}
 			{@render menuItem({ text: 'Sign Up', iconId: 'fa6-user-plus' })}
 		</ul>
 	</div>
 </nav>
+<Modal open={authModal.isOpen} onclose={authModal.close}>
+	<AuthForm onsuccess={authModal.close} />
+</Modal>

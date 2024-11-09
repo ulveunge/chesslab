@@ -21,11 +21,15 @@
 		--depth-light: rgba(0, 0, 0, 0.06);
 		--depth-dark: rgba(60, 60, 60, 0.3);
 
+		--overlay-light: rgba(0, 0, 0, 0.25);
+		--overlay-dark: rgba(255, 255, 255, 0.1);
+
 		--bg-surface: var(--bg-surface-light);
 		--bg-base: var(--bg-base-light);
 		--outline: var(--outline-light);
 		--text: var(--text-light);
 		--depth: var(--depth-light);
+		--overlay: var(--overlay-light);
 
 		@media (prefers-color-scheme: dark) {
 			--bg-surface: var(--bg-surface-dark);
@@ -33,6 +37,7 @@
 			--outline: var(--outline-dark);
 			--text: var(--text-dark);
 			--depth: var(--depth-dark);
+			--overlay: var(--overlay-dark);
 		}
 
 		&.light {
@@ -41,6 +46,7 @@
 			--outline: var(--outline-light);
 			--text: var(--text-light);
 			--depth: var(--depth-light);
+			--overlay: var(--overlay-light);
 		}
 
 		&.dark {
@@ -49,6 +55,9 @@
 			--outline: var(--outline-dark);
 			--text: var(--text-dark);
 			--depth: var(--depth-dark);
+			--overlay: var(--overlay-dark);
 		}
+
+		--neutral-gray: #6b7280;
 	}
 }

@@ -11,7 +11,9 @@ export default {
 				outline: 'var(--outline)',
 				accent: 'var(--accent)',
 				'accent-dark': 'var(--accent-dark)',
-				depth: 'var(--depth)'
+				depth: 'var(--depth)',
+				overlay: 'var(--overlay)',
+				gray: 'var(--neutral-gray)'
 			},
 			fontFamily: {
 				ubuntu: ['Ubuntu', 'sans-serif'],

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import clsx from 'clsx';
 	import { Icon } from '$shared/ui';
-	import type { TTheme } from '$shared/lib';
+	import type { TTheme } from '$shared/lib/types';
 	import { THEMES } from '../lib/constants';
 	import themeStore from '../model/store.svelte';
 
@@ -39,7 +39,7 @@
 
 <button
 	class={clsx(
-		'shadow-depth relative h-8 w-24 overflow-hidden rounded-lg border border-outline bg-base text-sm font-thin shadow-inner hover:border-accent',
+		'relative h-8 w-24 overflow-hidden rounded-lg border border-outline bg-base text-sm font-thin shadow-inner shadow-depth hover:border-accent',
 		className
 	)}
 	onclick={switchTheme}
