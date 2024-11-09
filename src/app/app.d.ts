@@ -8,21 +8,23 @@ declare global {
 		event: ServerLoadEvent<Record<string, any>, Record<string, any>, string | null>
 	) => MaybePromise<void | Record<string, any>>;
 
+	type User = {
+		avatar: string;
+		collectionId: string;
+		collectionName: string;
+		created: string;
+		email: string;
+		emailVisibility: boolean;
+		id: string;
+		name: string;
+		updated: string;
+		username: string;
+		verified: boolean;
+	} | null;
+
 	type Auth = {
 		isAuth: boolean;
-		user: {
-			avatar: string;
-			collectionId: string;
-			collectionName: string;
-			created: string;
-			email: string;
-			emailVisibility: boolean;
-			id: string;
-			name: string;
-			updated: string;
-			username: string;
-			verified: boolean;
-		} | null;
+		user: User;
 	};
 
 	declare namespace App {
