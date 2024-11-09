@@ -37,7 +37,7 @@
 		'relative inline-flex items-center overflow-hidden rounded-md text-white transition-transform',
 		'active:translate-y-px',
 		"before:absolute before:inset-0 before:size-full before:rounded-[inherit] before:bg-accent before:content-['']",
-		"after:bg-accent-dark after:absolute after:inset-0 after:size-full after:origin-right after:scale-x-0 after:rounded-[inherit] after:transition-transform after:content-['']",
+		"after:absolute after:inset-0 after:size-full after:origin-right after:scale-x-0 after:rounded-[inherit] after:bg-accent-dark after:transition-transform after:content-['']",
 		'hover:after:origin-left hover:after:scale-x-100',
 		sizeClasses,
 		className
@@ -45,7 +45,7 @@
 	{href}
 	{onclick}
 >
-	<span class="z-10">
+	<span class="z-10 w-full text-center">
 		{@render children()}
 	</span>
 </svelte:element>

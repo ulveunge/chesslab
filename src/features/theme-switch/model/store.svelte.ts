@@ -1,5 +1,5 @@
 import cookies from 'js-cookie';
-import type { TTheme } from '$shared/lib';
+import type { TTheme } from '$shared/lib/types';
 
 const createThemeStore = () => {
 	let currentTheme = $state((cookies.get('theme') as TTheme) ?? 'system');

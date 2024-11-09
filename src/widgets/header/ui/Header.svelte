@@ -1,5 +1,5 @@
 <script>
-	import { ThemeSwitch } from '$features';
+	import { ThemeSwitch } from '$features/theme-switch';
 </script>
 
 <header class="sticky top-0 flex h-[68px] items-center border-b border-outline bg-surface px-6">

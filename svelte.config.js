@@ -21,7 +21,6 @@ const config = {
 			}
 		},
 		alias: {
-			$: 'src/*',
 			$shared: 'src/shared/*',
 			$entities: 'src/entities/*',
 			$features: 'src/features/*',

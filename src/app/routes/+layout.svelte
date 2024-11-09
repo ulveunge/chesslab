@@ -1,7 +1,11 @@
 <script lang="ts">
 	import '../app.css';
-	import { NavBar, Header } from '$widgets';
-	let { children } = $props();
+	import { NavBar } from '$widgets/nav-bar';
+	import { Header } from '$widgets/header';
+
+	let { children, data } = $props();
+
+	console.log(data.auth);
 </script>
 
 <div class="flex min-h-svh">
