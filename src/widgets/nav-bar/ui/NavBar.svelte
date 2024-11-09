@@ -7,6 +7,11 @@
 	import { AuthForm } from '$features/auth';
 	import { ICON_SIZE } from '../lib/constants';
 
+	interface Props {
+		mode: 'desktop' | 'mobile';
+	}
+
+	let { mode }: Props = $props();
 	let open = $state(false);
 
 	let nav: HTMLElement;
@@ -24,12 +29,35 @@
 
 	const authModal = useModal();
 
-	$effect(() => {
-		const width = container.clientWidth;
-		const { paddingLeft, paddingRight } = window.getComputedStyle(container);
+	const outsideClickHandler = () => {
+		if (mode === 'desktop') return;
 
-		nav.style.setProperty('--max-width', `${width}px`);
-		nav.style.setProperty('--min-width', `calc(${ICON_SIZE}px + ${paddingLeft} + ${paddingRight})`);
+		closeHandler();
+	};
+
+	$effect(() => {
+		if (mode === 'mobile') return;
+
+		const handler = () => {
+			const width = container.clientWidth;
+			const { paddingLeft, paddingRight } = window.getComputedStyle(container);
+
+			if (!width) return;
+
+			nav.style.setProperty('--max-width', `${width}px`);
+			nav.style.setProperty(
+				'--min-width',
+				`calc(${ICON_SIZE}px + ${paddingLeft} + ${paddingRight})`
+			);
+		};
+
+		handler();
+
+		window.addEventListener('resize', handler);
+
+		return () => {
+			window.removeEventListener('resize', handler);
+		};
 	});
 </script>
 
@@ -71,44 +99,62 @@
 
 <nav
 	bind:this={nav}
-	use:outsideClick={closeHandler}
-	class={clsx(
-		'sticky top-0 flex h-svh shrink-0 self-start overflow-hidden border-r border-outline transition-[width] duration-300',
-		{
-			'w-[var(--min-width)]': !open,
-			'w-[var(--max-width)]': open
-		}
-	)}
+	use:outsideClick={outsideClickHandler}
+	class={clsx({
+		'sticky top-0 hidden h-svh shrink-0 self-start overflow-hidden border-r border-outline transition-[width] duration-300 sm:flex':
+			mode === 'desktop',
+		'h-full sm:hidden': mode === 'mobile',
+		'w-[var(--min-width)]': mode === 'desktop' && !open,
+		'w-[var(--max-width)]': mode === 'desktop' && open
+	})}
 	style="--min-width: 68px"
 >
-	<div bind:this={container} class="flex min-w-max origin-left flex-col p-6">
-		<div>
+	<div
+		bind:this={container}
+		class={clsx('relative flex origin-left flex-col', {
+			'p-6': mode === 'desktop',
+			'h-full': mode === 'mobile'
+		})}
+	>
+		<div class={clsx({ 'flex h-full items-center px-6': mode === 'mobile' })}>
 			<button class="hover:text-accent" onclick={toggleHandler} aria-label="open menu">
 				<Icon size={ICON_SIZE} id="fa6-bars" />
 			</button>
 		</div>
-		<div class="my-auto flex flex-col gap-4">
-			{#each NAVIGATION_LINKS as { id, label, links } (id)}
-				<p class={clsx('font-roboto-condensed text-lg transition-opacity', { 'opacity-0': !open })}>
-					{label}
-				</p>
-				<ul class="flex flex-col gap-3">
-					{#each links as { id, text, iconId, href } (id)}
-						{@render menuItem({ text, iconId, href })}
-					{/each}
-				</ul>
-			{/each}
-		</div>
-		<ul class="flex flex-col gap-3">
-			{@render menuItem({
-				text: 'Log In',
-				iconId: 'fa6-right-to-bracket',
-				onclick: authModal.open
+		<div
+			class={clsx('flex flex-col gap-4', {
+				'h-full': mode === 'desktop',
+				'absolute top-[calc(100%+1px)] h-[calc(100svh-100%)] border-r border-outline bg-surface px-6 pb-6 transition-transform':
+					mode === 'mobile',
+				'-translate-x-full': mode === 'mobile' && !open
 			})}
-			{@render menuItem({ text: 'Sign Up', iconId: 'fa6-user-plus' })}
-		</ul>
+		>
+			<div class="my-auto flex min-w-max flex-col gap-4">
+				{#each NAVIGATION_LINKS as { id, label, links } (id)}
+					<p
+						class={clsx('font-roboto-condensed text-lg transition-opacity', { 'opacity-0': !open })}
+					>
+						{label}
+					</p>
+					<ul class="flex flex-col gap-3">
+						{#each links as { id, text, iconId, href } (id)}
+							{@render menuItem({ text, iconId, href })}
+						{/each}
+					</ul>
+				{/each}
+			</div>
+			<ul class="flex min-w-max flex-col gap-3">
+				{@render menuItem({
+					text: 'Log In',
+					iconId: 'fa6-right-to-bracket',
+					onclick: authModal.open
+				})}
+				{@render menuItem({ text: 'Sign Up', iconId: 'fa6-user-plus' })}
+			</ul>
+		</div>
 	</div>
 </nav>
+
 <Modal class="basis-96" open={authModal.isOpen} onclose={authModal.close}>
 	<AuthForm onsuccess={authModal.close} />
 </Modal>

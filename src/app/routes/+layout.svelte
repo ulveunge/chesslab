@@ -9,9 +9,11 @@
 </script>
 
 <div class="flex min-h-svh">
-	<NavBar />
+	<NavBar mode="desktop" />
 	<div class="grow bg-base">
-		<Header />
+		<Header>
+			<NavBar mode="mobile" />
+		</Header>
 		<main class="overflow-hidden p-10">
 			{@render children()}
 		</main>
