@@ -9,3 +9,9 @@ export interface INavigationLinks {
 }
 
 export type TTheme = 'light' | 'system' | 'dark';
+
+export interface Message {
+	id: string;
+	userId: string;
+	message: string;
+}

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Button } from '$shared/ui';
+	import { Chat } from '$entities/chat';
+
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -10,3 +12,5 @@
 <Button>chesslab</Button>
 <Button size="m">chesslab</Button>
 <Button size="l">chesslab</Button>
+
+<Chat />
